@@ -1,13 +1,15 @@
-package com.example.mytasks;
+package com.example.mytasks.Dao;
 
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.mytasks.Model.Notes;
+
 import java.util.List;
 
 @androidx.room.Dao
-public interface Dao {
+public interface NotesDao {
 
     @Query( "SELECT * FROM Notes_Database" )
      List<Notes> getallNotes();
