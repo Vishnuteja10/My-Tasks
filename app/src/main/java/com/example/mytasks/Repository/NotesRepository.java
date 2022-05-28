@@ -15,7 +15,7 @@ public class NotesRepository {
     public NotesDao notesDao;
     public LiveData<List<Notes>> getallNotes;
 
-   
+
 
     public NotesRepository(Application application){
         NotesDatabase database = NotesDatabase.getDatabaseInstance( application );
@@ -24,13 +24,13 @@ public class NotesRepository {
 
     }
 
-    void insertNotes(Notes notes){
+   public void insertNotes(Notes notes){
         notesDao.insertNotes( notes );
     }
-    void deleteNotes(int id){
+    public void deleteNotes(int id){
         notesDao.deleteNotes( id );
     }
-    void updateNotes(Notes notes){
+   public void updateNotes(Notes notes){
         notesDao.updateNotes( notes );
     }
 }
