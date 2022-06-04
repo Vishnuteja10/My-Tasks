@@ -15,6 +15,7 @@
 
 
     <EditText
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,6 +29,7 @@
         />
 
     <EditText
+        android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,6 +64,7 @@
 
 
         <ImageView
+            android:id="@+id/greenPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="10dp"
@@ -71,6 +74,7 @@
 
 
         <ImageView
+            android:id="@+id/yellowPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="10dp"
@@ -78,6 +82,7 @@
             />
 
         <ImageView
+            android:id="@+id/redPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="10dp"
@@ -88,6 +93,7 @@
 
 
     <EditText
+        android:id="@+id/notesData"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginStart="16dp"
