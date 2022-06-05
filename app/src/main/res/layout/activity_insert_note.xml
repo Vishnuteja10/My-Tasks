@@ -69,7 +69,7 @@
             android:layout_height="25dp"
             android:layout_margin="10dp"
             android:background="@drawable/green_shape"
-            android:src="@drawable/ic_baseline_done_24"
+
             />
 
 

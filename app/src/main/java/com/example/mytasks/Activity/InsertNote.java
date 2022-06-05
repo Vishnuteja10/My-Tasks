@@ -38,7 +38,7 @@ public class InsertNote extends AppCompatActivity {
             binding.yellowPriority.setImageResource( 0 );
             binding.redPriority.setImageResource( 0 );
 
-            priority ="1";
+             priority ="1";
         } );
 
         binding.yellowPriority.setOnClickListener( v -> {
@@ -69,7 +69,7 @@ public class InsertNote extends AppCompatActivity {
                 title = binding.title.getText().toString();
                 subtitle = binding.subtitle.getText().toString();
                 notes = binding.notesData.getText().toString();
-
+                //priority = priority;
                 CreateNotes(title,subtitle,notes);
 
             }
@@ -79,7 +79,7 @@ public class InsertNote extends AppCompatActivity {
     private void CreateNotes(String title, String subtitle, String notes) {
         
         Date date = new Date();
-        CharSequence sequence = android.text.format.DateFormat.format("MMMM d,YYYY",date.getTime());
+        CharSequence sequence = android.text.format.DateFormat.format("MMMM d,yyyy",date.getTime());
 
 
         Notes notes1 = new Notes();
