@@ -1,6 +1,7 @@
 package com.example.mytasks;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +13,11 @@ import android.widget.TextView;
 
 import com.example.mytasks.Activity.InsertNote;
 import com.example.mytasks.Adapter.NotesAdapter;
+import com.example.mytasks.Model.Notes;
 import com.example.mytasks.ViewModel.NotesViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,16 +43,19 @@ public class MainActivity extends AppCompatActivity {
         nofilter.setBackgroundResource( R.drawable.filter_selected_shape );
 
         nofilter.setOnClickListener( v -> {
+            loadData(0);
             high_low.setBackgroundResource( R.drawable.filter_shape);
             low_high.setBackgroundResource( R.drawable.filter_shape );
             nofilter.setBackgroundResource( R.drawable.filter_selected_shape );
         } );
         high_low.setOnClickListener( v -> {
+            loadData(1);
             high_low.setBackgroundResource( R.drawable.filter_selected_shape  );
             low_high.setBackgroundResource( R.drawable.filter_shape );
             nofilter.setBackgroundResource( R.drawable.filter_shape );
         } );
         low_high.setOnClickListener( v -> {
+            loadData(2);
             high_low.setBackgroundResource( R.drawable.filter_shape );
             low_high.setBackgroundResource( R.drawable.filter_selected_shape  );
             nofilter.setBackgroundResource( R.drawable.filter_shape );
@@ -60,11 +67,45 @@ public class MainActivity extends AppCompatActivity {
             startActivity( new Intent(MainActivity.this, InsertNote.class) );
         } );
 
-        notesViewModel.getAllNotes.observe( this,notes -> {
-               notesRecycler.setLayoutManager( new LinearLayoutManager( this ) );
-               adapter = new NotesAdapter(MainActivity.this,notes);
-               notesRecycler.setAdapter( adapter );
+        notesViewModel.getAllNotes.observe( this, new Observer<List<Notes>>() {
+            @Override
+            public void onChanged(List<Notes> notes) {
+                setAdapter(notes);
+            }
         } );
 
+    }
+
+    private void loadData(int i) {
+
+        if(i == 0){
+            notesViewModel.getAllNotes.observe( this, new Observer<List<Notes>>() {
+                @Override
+                public void onChanged(List<Notes> notes) {
+                    setAdapter(notes);
+                }
+            } );
+        }else if(i == 1){
+            notesViewModel.hightolow.observe( this, new Observer<List<Notes>>() {
+                @Override
+                public void onChanged(List<Notes> notes) {
+                    setAdapter(notes);
+                }
+            } );
+        }else{
+            notesViewModel.lowtohigh.observe( this, new Observer<List<Notes>>() {
+                @Override
+                public void onChanged(List<Notes> notes) {
+                    setAdapter(notes);
+                }
+            } );
+        }
+
+    }
+
+    public void setAdapter(List<Notes> notes){
+        notesRecycler.setLayoutManager( new LinearLayoutManager( this ) );
+        adapter = new NotesAdapter(MainActivity.this,notes);
+        notesRecycler.setAdapter( adapter );
     }
 }
