@@ -86,6 +86,7 @@ public class InsertNote extends AppCompatActivity {
         notes1.notesTitle = title;
         notes1.notesSubtitle = subtitle;
         notes1.notes = notes;
+        notes1.notesPriority = priority;
         notes1.date = sequence.toString();
         notesViewModel.insertNotes( notes1 );
 

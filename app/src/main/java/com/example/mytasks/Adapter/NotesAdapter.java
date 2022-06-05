@@ -37,11 +37,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
 
         Notes note = notes.get(position);
 
-        if(note.notesPriority.equals( "1" )){
+       if( note.notesPriority.equals("1")){
             holder.notesPriority.setBackgroundResource( R.drawable.green_shape );
-        }else if(note.notesPriority.equals("2")){
+        }else if( note.notesPriority.equals("2")){
             holder.notesPriority.setBackgroundResource( R.drawable.yellow_shape );
-        }else if(note.notesPriority.equals("3")){
+        }else if( note.notesPriority.equals("3")){
             holder.notesPriority.setBackgroundResource( R.drawable.red_shape );
         }
 
