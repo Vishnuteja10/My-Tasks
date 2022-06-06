@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.mytasks.Activity.InsertNote;
@@ -17,6 +20,7 @@ import com.example.mytasks.Model.Notes;
 import com.example.mytasks.ViewModel.NotesViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     NotesAdapter adapter;
 
     TextView nofilter,high_low,low_high;
+    List<Notes> filternotesallList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Notes> notes) {
                 setAdapter(notes);
+                filternotesallList = notes;
             }
         } );
 
@@ -83,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Notes> notes) {
                     setAdapter(notes);
+                    filternotesallList = notes;
                 }
             } );
         }else if(i == 1){
@@ -90,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Notes> notes) {
                     setAdapter(notes);
+                    filternotesallList = notes;
                 }
             } );
         }else{
@@ -97,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Notes> notes) {
                     setAdapter(notes);
+                    filternotesallList = notes;
                 }
             } );
         }
@@ -107,5 +116,39 @@ public class MainActivity extends AppCompatActivity {
         notesRecycler.setLayoutManager( new LinearLayoutManager( this ) );
         adapter = new NotesAdapter(MainActivity.this,notes);
         notesRecycler.setAdapter( adapter );
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate( R.menu.search_note,menu );
+
+        MenuItem menuItem = menu.findItem( R.id.search_bar );
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint( "Search your notes here.." );
+        searchView.setOnQueryTextListener( new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                notesFilter(newText);
+                return false;
+            }
+        } );
+
+        return super.onCreateOptionsMenu( menu );
+    }
+
+    private void notesFilter(String newtext){
+        ArrayList<Notes> filternames = new ArrayList<>();
+
+        for(Notes notes : this.filternotesallList){
+
+            if(notes.notesTitle.contains( newtext ) || notes.notesSubtitle.contains( newtext )){
+                filternames.add(notes);
+            }
+        }
+        this.adapter.searchNotes( filternames );
+        
     }
 }
