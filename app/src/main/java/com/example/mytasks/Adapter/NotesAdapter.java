@@ -62,6 +62,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
 
         holder.title.setText( note.notesTitle );
         holder.subtitle.setText( note.notesSubtitle );
+        holder.notes.setText( note.notes );
 
         holder.notesDate.setText( note.date ); // might be error
 
@@ -85,7 +86,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
 
    static class notesViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title,subtitle,notesDate;
+        TextView title,subtitle,notesDate,notes;
         View notesPriority;
 
         public notesViewHolder(@NonNull  View itemView) {
@@ -93,6 +94,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
 
             title = itemView.findViewById( R.id.notesTitle );
             subtitle = itemView.findViewById( R.id.notesSubtitle );
+            notes = itemView.findViewById( R.id.notes );
             notesDate = itemView.findViewById( R.id.notesDate );
             notesPriority = itemView.findViewById( R.id.notesPriority );
         }
