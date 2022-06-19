@@ -25,7 +25,7 @@ public class UpdateNote extends AppCompatActivity {
 
     ActivityUpdateNoteBinding binding;
     String priority = "1";
-    String sTitle, sSubtitle,sNotes,sPriority;
+    String sTitle, sNotes,sPriority;
     int iId;
     NotesViewModel notesViewModel;
 
@@ -39,12 +39,10 @@ public class UpdateNote extends AppCompatActivity {
 
         iId = getIntent().getIntExtra( "id",0 );
         sTitle = getIntent().getStringExtra( "title" );
-        sSubtitle = getIntent().getStringExtra( "subtitle" );
         sNotes = getIntent().getStringExtra( "notes" );
         sPriority = getIntent().getStringExtra( "priority" );
 
         binding.upTitle.setText( sTitle );
-        binding.upSubtitle.setText( sSubtitle );
         binding.upNotesData.setText( sNotes );
 
      /*   if(sPriority.equals("1")){
@@ -85,16 +83,15 @@ public class UpdateNote extends AppCompatActivity {
         binding.updateNotesbtn.setOnClickListener( v -> {
 
             String title = binding.upTitle.getText().toString();
-            String subtitle = binding.upSubtitle.getText().toString();
             String notes = binding.upNotesData.getText().toString();
             //priority = priority;
-            CreateNotes(title,subtitle,notes);
+            CreateNotes(title,notes);
 
         } );
 
     }
 
-    private void CreateNotes(String title, String subtitle, String notes) {
+    private void CreateNotes(String title,  String notes) {
 
         Date date = new Date();
         CharSequence sequence = android.text.format.DateFormat.format("MMMM d,yyyy",date.getTime());
@@ -104,7 +101,6 @@ public class UpdateNote extends AppCompatActivity {
         notesViewModel.updateNote( updateNotes );
         updateNotes.id = iId;
         updateNotes.notesTitle = title;
-        updateNotes.notesSubtitle = subtitle;
         updateNotes.notes = notes;
         updateNotes.notesPriority = priority;
         updateNotes.date = sequence.toString();

@@ -67,16 +67,15 @@ public class InsertNote extends AppCompatActivity {
             public void onClick(View v) {
 
                 title = binding.title.getText().toString();
-                subtitle = binding.subtitle.getText().toString();
                 notes = binding.notesData.getText().toString();
                 //priority = priority;
-                CreateNotes(title,subtitle,notes);
+                CreateNotes(title,notes);
 
             }
         } );
     }
 
-    private void CreateNotes(String title, String subtitle, String notes) {
+    private void CreateNotes(String title,  String notes) {
         
         Date date = new Date();
         CharSequence sequence = android.text.format.DateFormat.format("MMMM d,yyyy",date.getTime());
@@ -84,7 +83,6 @@ public class InsertNote extends AppCompatActivity {
 
         Notes notes1 = new Notes();
         notes1.notesTitle = title;
-        notes1.notesSubtitle = subtitle;
         notes1.notes = notes;
         notes1.notesPriority = priority;
         notes1.date = sequence.toString();

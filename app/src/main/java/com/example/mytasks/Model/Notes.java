@@ -13,9 +13,6 @@ public class Notes {
     @ColumnInfo(name = "notes_title")
    public String notesTitle;
 
-    @ColumnInfo(name = "note_subtitle")
-    public String notesSubtitle;
-
     @ColumnInfo(name = "notes_date")
     public String date;
 

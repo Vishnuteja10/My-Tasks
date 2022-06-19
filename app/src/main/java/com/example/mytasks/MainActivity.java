@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
         for(Notes notes : this.filternotesallList){
 
-            if(notes.notesTitle.contains( newtext ) || notes.notesSubtitle.contains( newtext )){
+            if(notes.notesTitle.contains( newtext ) || notes.notes.contains( newtext )){
                 filternames.add(notes);
             }
         }
