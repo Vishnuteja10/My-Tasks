@@ -117,7 +117,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="26dp"
         android:src="@drawable/ic_baseline_done_24"
-        android:backgroundTint="@color/purple_700"
+        android:backgroundTint="#EC8DCC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />

@@ -27,9 +27,6 @@ public abstract class NotesDatabase extends RoomDatabase {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
 
-
-
-
             database.execSQL(" CREATE TABLE t1 (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,notes_title TEXT,notes_date TEXT,notes TEXT,notes_priority TEXT) ");
             database.execSQL( "INSERT INTO t1 (id,notes_title,notes_date,notes,notes_priority) SELECT id,notes_title,notes_date,notes,notes_priority FROM 'Notes_Database'" );
             database.execSQL( "DROP TABLE 'Notes_Database'" );

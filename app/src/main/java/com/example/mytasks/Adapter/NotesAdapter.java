@@ -47,7 +47,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
 
         Notes note = notes.get(position);
 
-      /*  switch (note.notesPriority) {
+        switch (note.notesPriority) {
             case "1":
                 holder.notesPriority.setBackgroundResource( R.drawable.green_shape );
                 break;
@@ -57,7 +57,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHol
             case "3":
                 holder.notesPriority.setBackgroundResource( R.drawable.red_shape );
                 break;
-        } */
+        }
 
 
         holder.title.setText( note.notesTitle );
