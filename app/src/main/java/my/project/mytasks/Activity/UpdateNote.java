@@ -1,4 +1,4 @@
-package com.example.mytasks.Activity;
+package my.project.mytasks.Activity;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,10 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.R;
-import com.example.mytasks.ViewModel.NotesViewModel;
-import com.example.mytasks.databinding.ActivityUpdateNoteBinding;
+import my.project.mytasks.Model.Notes;
+import my.project.mytasks.R;
+import my.project.mytasks.ViewModel.NotesViewModel;
+import my.project.mytasks.databinding.ActivityUpdateNoteBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Date;

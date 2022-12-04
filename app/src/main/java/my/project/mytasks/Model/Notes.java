@@ -1,4 +1,4 @@
-package com.example.mytasks.Model;
+package my.project.mytasks.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

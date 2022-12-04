@@ -1,22 +1,19 @@
-package com.example.mytasks.Activity;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
+package my.project.mytasks.Activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.R;
-import com.example.mytasks.ViewModel.NotesViewModel;
-import com.example.mytasks.databinding.ActivityInsertNoteBinding;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
-import java.text.DateFormat;
+import my.project.mytasks.R;
+import my.project.mytasks.databinding.ActivityInsertNoteBinding;
+
 import java.util.Date;
 
-import static androidx.lifecycle.ViewModelProviders.*;
+import my.project.mytasks.Model.Notes;
+import my.project.mytasks.ViewModel.NotesViewModel;
 
 public class InsertNote extends AppCompatActivity {
 

@@ -1,19 +1,17 @@
-package com.example.mytasks.Database;
+package my.project.mytasks.Database;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
-import androidx.room.AutoMigration;
 import androidx.room.Database;
-import androidx.room.Delete;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.Dao.NotesDao;
+import my.project.mytasks.Model.Notes;
+import my.project.mytasks.Dao.NotesDao;
 
 @SuppressLint("RestrictedApi")
 @Database( entities = {Notes.class},version = 2,exportSchema = false)

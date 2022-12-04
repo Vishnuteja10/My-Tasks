@@ -1,4 +1,4 @@
-package com.example.mytasks.Activity;
+package my.project.mytasks.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.mytasks.MainActivity;
-import com.example.mytasks.R;
+import my.project.mytasks.MainActivity;
+import my.project.mytasks.R;
 
 public class SplashScreen extends AppCompatActivity {
 

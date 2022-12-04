@@ -1,4 +1,4 @@
-package com.example.mytasks;
+package my.project.mytasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -10,14 +10,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.example.mytasks.Activity.InsertNote;
-import com.example.mytasks.Adapter.NotesAdapter;
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.ViewModel.NotesViewModel;
+import my.project.mytasks.Activity.InsertNote;
+import my.project.mytasks.Adapter.NotesAdapter;
+import my.project.mytasks.Model.Notes;
+
+import my.project.mytasks.R;
+
+import my.project.mytasks.ViewModel.NotesViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

@@ -1,12 +1,12 @@
-package com.example.mytasks.Repository;
+package my.project.mytasks.Repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.mytasks.Dao.NotesDao;
-import com.example.mytasks.Database.NotesDatabase;
-import com.example.mytasks.Model.Notes;
+import my.project.mytasks.Dao.NotesDao;
+import my.project.mytasks.Database.NotesDatabase;
+import my.project.mytasks.Model.Notes;
 
 import java.util.List;
 

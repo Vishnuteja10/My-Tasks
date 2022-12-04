@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey"
     android:orientation="vertical"
-    tools:context=".Activity.InsertNote">
+    tools:context="my.project.mytasks.Activity.InsertNote">
 
     <LinearLayout
         android:layout_width="match_parent"

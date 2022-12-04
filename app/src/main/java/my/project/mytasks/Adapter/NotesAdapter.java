@@ -1,4 +1,4 @@
-package com.example.mytasks.Adapter;
+package my.project.mytasks.Adapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,10 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mytasks.Activity.UpdateNote;
-import com.example.mytasks.MainActivity;
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.R;
+import my.project.mytasks.Activity.UpdateNote;
+import my.project.mytasks.MainActivity;
+import my.project.mytasks.Model.Notes;
+import my.project.mytasks.R;
 
 import java.util.ArrayList;
 import java.util.List;

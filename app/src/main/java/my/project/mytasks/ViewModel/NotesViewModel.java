@@ -1,4 +1,4 @@
-package com.example.mytasks.ViewModel;
+package my.project.mytasks.ViewModel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.mytasks.Model.Notes;
-import com.example.mytasks.Repository.NotesRepository;
+import my.project.mytasks.Model.Notes;
+import my.project.mytasks.Repository.NotesRepository;
 
 import java.util.List;
 

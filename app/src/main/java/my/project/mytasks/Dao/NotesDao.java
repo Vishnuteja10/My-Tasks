@@ -1,11 +1,11 @@
-package com.example.mytasks.Dao;
+package my.project.mytasks.Dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.mytasks.Model.Notes;
+import my.project.mytasks.Model.Notes;
 
 import java.util.List;
 

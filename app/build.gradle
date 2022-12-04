@@ -7,8 +7,8 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.mytasks"
-        minSdkVersion 16
+        applicationId "my.project.mytasks"
+        minSdkVersion 14
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
